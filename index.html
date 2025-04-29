@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horário por Turma - IFPR Informática</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Horário Interativo por Turma - Técnico em Informática Integrado IFPR</h1>
+    <p>Arraste os cards das disciplinas para reorganizar o horário dentro ou entre as turmas (sem validação automática de regras).</p>
+
+    <div class="timetable-container">
+
+        <!-- ==================== 1º ANO ==================== -->
+        <section class="turma-schedule">
+            <h2 class="turma-title">Horário - 1º Ano</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="time-header-col">Horário</th>
+                        <th>Segunda</th>
+                        <th>Terça</th>
+                        <th>Quarta</th>
+                        <th>Quinta</th>
+                        <th>Sexta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- H1 -->
+                    <tr>
+                        <td class="time-label">H1 (07:30)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h1" data-turma="1ano"><div id="card-1ano-seg-h1-port1" class="discipline-card lang" draggable="true">Port I (4h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h1" data-turma="1ano"><div id="card-1ano-ter-h1-ing1" class="discipline-card lang" draggable="true">Inglês I (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h1" data-turma="1ano"><div id="card-1ano-qua-h1-info1b" class="discipline-card info info1" draggable="true">Info1: Ling Apres (4h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h1" data-turma="1ano"><div id="card-1ano-qui-h1-mat1b" class="discipline-card exact" draggable="true">Mat I (4h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h1" data-turma="1ano"><div id="card-1ano-sex-h1-edfis1" class="discipline-card other" draggable="true">Ed. Física I (2h)</div></td>
+                    </tr>
+                    <!-- H2 -->
+                    <tr>
+                        <td class="time-label">H2 (08:20)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h2" data-turma="1ano"><div id="card-1ano-seg-h2-port1" class="discipline-card lang" draggable="true">Port I (4h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h2" data-turma="1ano"><div id="card-1ano-ter-h2-ing1" class="discipline-card lang" draggable="true">Inglês I (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h2" data-turma="1ano"><div id="card-1ano-qua-h2-info1b" class="discipline-card info info1" draggable="true">Info1: Ling Apres (4h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h2" data-turma="1ano"><div id="card-1ano-qui-h2-mat1b" class="discipline-card exact" draggable="true">Mat I (4h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h2" data-turma="1ano"><div id="card-1ano-sex-h2-edfis1" class="discipline-card other" draggable="true">Ed. Física I (2h)</div></td>
+                    </tr>
+                    <!-- H3 -->
+                     <tr>
+                        <td class="time-label">H3 (09:25)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h3" data-turma="1ano"><div id="card-1ano-seg-h3-mat1" class="discipline-card exact" draggable="true">Mat I (4h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h3" data-turma="1ano"><div id="card-1ano-ter-h3-info1a" class="discipline-card info info1" draggable="true">Info1: Ling Apres (4h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h3" data-turma="1ano"><div id="card-1ano-qua-h3-fil1" class="discipline-card human" draggable="true">Filo I (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h3" data-turma="1ano"><div id="card-1ano-qui-h3-soc1" class="discipline-card human" draggable="true">Socio I (2h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h3" data-turma="1ano"><div id="card-1ano-sex-h3-fis1b" class="discipline-card exact" draggable="true">Física I (2h)</div></td>
+                    </tr>
+                    <!-- H4 -->
+                    <tr>
+                        <td class="time-label">H4 (10:15)</td>
+                         <td class="timetable-slot" data-day="seg" data-time="h4" data-turma="1ano"><div id="card-1ano-seg-h4-mat1" class="discipline-card exact" draggable="true">Mat I (4h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h4" data-turma="1ano"><div id="card-1ano-ter-h4-info1a" class="discipline-card info info1" draggable="true">Info1: Ling Apres (4h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h4" data-turma="1ano"><div id="card-1ano-qua-h4-fil1" class="discipline-card human" draggable="true">Filo I (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h4" data-turma="1ano"><div id="card-1ano-qui-h4-soc1" class="discipline-card human" draggable="true">Socio I (2h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h4" data-turma="1ano"><div id="card-1ano-sex-h4-qui1b" class="discipline-card exact" draggable="true">Química I (2h)</div></td>
+                    </tr>
+                    <!-- H5 -->
+                    <tr>
+                        <td class="time-label">H5 (11:05)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h5" data-turma="1ano"><div id="card-1ano-seg-h5-bio1" class="discipline-card nature" draggable="true">Bio I (2h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h5" data-turma="1ano"><div id="card-1ano-ter-h5-fis1" class="discipline-card exact" draggable="true">Física I (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h5" data-turma="1ano"><div id="card-1ano-qua-h5-qui1a" class="discipline-card exact" draggable="true">Química I (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h5" data-turma="1ano"><div id="card-1ano-qui-h5-bio1b" class="discipline-card nature" draggable="true">Bio I (2h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h5" data-turma="1ano"><div id="card-1ano-sex-h5-hist1" class="discipline-card human" draggable="true">História I (1h)</div></td>
+                    </tr>
+                    <tr class="afternoon-separator"><td colspan="6">TARDE</td></tr>
+                    <!-- H6 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H6 (Tarde)</td>
+                        <td class="timetable-slot unavailable" data-day="seg" data-time="h6" data-turma="1ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h6" data-turma="1ano"><div id="card-1ano-ter-h6-info2" class="discipline-card info info2" draggable="true">Info2: Lógica (2h)</div></td>
+                        <td class="timetable-slot unavailable" data-day="qua" data-time="h6" data-turma="1ano"></td>
+                        <td class="timetable-slot unavailable" data-day="qui" data-time="h6" data-turma="1ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="sex" data-time="h6" data-turma="1ano"><div id="card-1ano-sex-h6-info3b" class="discipline-card info info3" draggable="true">Info3: Fund Info (2h)</div></td> <!-- Aula movida -->
+                    </tr>
+                    <!-- H7 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H7 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h7" data-turma="1ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h7" data-turma="1ano"><div id="card-1ano-ter-h7-info2" class="discipline-card info info2" draggable="true">Info2: Lógica (2h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h7" data-turma="1ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h7" data-turma="1ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h7" data-turma="1ano"></td>
+                    </tr>
+                     <!-- H8 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H8 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h8" data-turma="1ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h8" data-turma="1ano"><div id="card-1ano-ter-h8-info4" class="discipline-card info info4" draggable="true">Info4: Proj Int I (2h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h8" data-turma="1ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h8" data-turma="1ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h8" data-turma="1ano"></td>
+                    </tr>
+                    <!-- H9 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H9 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h9" data-turma="1ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h9" data-turma="1ano"><div id="card-1ano-ter-h9-info4" class="discipline-card info info4" draggable="true">Info4: Proj Int I (2h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h9" data-turma="1ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h9" data-turma="1ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h9" data-turma="1ano"></td>
+                    </tr>
+                    <!-- H10 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H10 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h10" data-turma="1ano"></td>
+                         <!-- Originalmente aqui, movida para Sex H6 -->
+                        <td class="timetable-slot afternoon-slot empty-afternoon" data-day="ter" data-time="h10" data-turma="1ano"> <div id="card-1ano-ter-h10-info3" class="discipline-card info info3 moved-placeholder" draggable="false">Info3: Fund Info (2h)<br>(Movido p/ Sex H6)</div> </td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h10" data-turma="1ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h10" data-turma="1ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h10" data-turma="1ano"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section> <!-- Fim 1º Ano -->
+
+        <!-- ==================== 2º ANO ==================== -->
+         <section class="turma-schedule">
+            <h2 class="turma-title">Horário - 2º Ano</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="time-header-col">Horário</th>
+                        <th>Segunda</th>
+                        <th>Terça</th>
+                        <th>Quarta</th>
+                        <th>Quinta</th>
+                        <th>Sexta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- H1 -->
+                    <tr>
+                        <td class="time-label">H1 (07:30)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h1" data-turma="2ano"><div id="card-2ano-seg-h1-mat2" class="discipline-card exact" draggable="true">Mat II (4h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h1" data-turma="2ano"><div id="card-2ano-ter-h1-edfis2" class="discipline-card other" draggable="true">Ed. Física II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h1" data-turma="2ano"><div id="card-2ano-qua-h1-hist2" class="discipline-card human" draggable="true">História II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h1" data-turma="2ano"><div id="card-2ano-qui-h1-port2b" class="discipline-card lang" draggable="true">Port II (4h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h1" data-turma="2ano"><div id="card-2ano-sex-h1-art1" class="discipline-card other" draggable="true">Arte I (2h)</div></td>
+                    </tr>
+                    <!-- H2 -->
+                    <tr>
+                        <td class="time-label">H2 (08:20)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h2" data-turma="2ano"><div id="card-2ano-seg-h2-mat2" class="discipline-card exact" draggable="true">Mat II (4h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h2" data-turma="2ano"><div id="card-2ano-ter-h2-edfis2" class="discipline-card other" draggable="true">Ed. Física II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h2" data-turma="2ano"><div id="card-2ano-qua-h2-hist2" class="discipline-card human" draggable="true">História II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h2" data-turma="2ano"><div id="card-2ano-qui-h2-port2b" class="discipline-card lang" draggable="true">Port II (4h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h2" data-turma="2ano"><div id="card-2ano-sex-h2-art1" class="discipline-card other" draggable="true">Arte I (2h)</div></td>
+                    </tr>
+                    <!-- H3 -->
+                     <tr>
+                        <td class="time-label">H3 (09:25)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h3" data-turma="2ano"><div id="card-2ano-seg-h3-port2" class="discipline-card lang" draggable="true">Port II (4h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h3" data-turma="2ano"><div id="card-2ano-ter-h3-qui2" class="discipline-card exact" draggable="true">Química II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h3" data-turma="2ano"><div id="card-2ano-qua-h3-mat2b" class="discipline-card exact" draggable="true">Mat II (4h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h3" data-turma="2ano"><div id="card-2ano-qui-h3-geo1" class="discipline-card human" draggable="true">Geo I (2h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h3" data-turma="2ano"><div id="card-2ano-sex-h3-fis2b" class="discipline-card exact" draggable="true">Física II (2h)</div></td>
+                    </tr>
+                    <!-- H4 -->
+                    <tr>
+                        <td class="time-label">H4 (10:15)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h4" data-turma="2ano"><div id="card-2ano-seg-h4-port2" class="discipline-card lang" draggable="true">Port II (4h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h4" data-turma="2ano"><div id="card-2ano-ter-h4-qui2" class="discipline-card exact" draggable="true">Química II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h4" data-turma="2ano"><div id="card-2ano-qua-h4-mat2b" class="discipline-card exact" draggable="true">Mat II (4h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h4" data-turma="2ano"><div id="card-2ano-qui-h4-geo1" class="discipline-card human" draggable="true">Geo I (2h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h4" data-turma="2ano"><div id="card-2ano-sex-h4-bio2b" class="discipline-card nature" draggable="true">Bio II (2h)</div></td>
+                    </tr>
+                    <!-- H5 -->
+                    <tr>
+                        <td class="time-label">H5 (11:05)</td>
+                         <td class="timetable-slot" data-day="seg" data-time="h5" data-turma="2ano"><div id="card-2ano-seg-h5-fis2a" class="discipline-card exact" draggable="true">Física II (2h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h5" data-turma="2ano"><div id="card-2ano-ter-h5-bio2a" class="discipline-card nature" draggable="true">Bio II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h5" data-turma="2ano"><div id="card-2ano-qua-h5-info4" class="discipline-card info info4" draggable="true">Info4: Proj Int II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h5" data-turma="2ano"><div id="card-2ano-qui-h5-fil2" class="discipline-card human" draggable="true">Filo II (1h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h5" data-turma="2ano"><div id="card-2ano-sex-h5-info1b" class="discipline-card info info1" draggable="true">Info1: Adm SO/Redes (4h)</div></td>
+                    </tr>
+                     <tr class="afternoon-separator"><td colspan="6">TARDE</td></tr>
+                    <!-- H6 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H6 (Tarde)</td>
+                        <td class="timetable-slot unavailable" data-day="seg" data-time="h6" data-turma="2ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h6" data-turma="2ano"><div id="card-2ano-ter-h6-info3" class="discipline-card info info3" draggable="true">Info3: Lab BD (2h)</div></td>
+                        <td class="timetable-slot unavailable" data-day="qua" data-time="h6" data-turma="2ano"></td>
+                        <td class="timetable-slot unavailable" data-day="qui" data-time="h6" data-turma="2ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="sex" data-time="h6" data-turma="2ano"><div id="card-2ano-sex-h6-info2b" class="discipline-card info info2" draggable="true">Info2: Dev Web OO (2h)</div></td> <!-- Aula movida -->
+                    </tr>
+                    <!-- H7 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H7 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h7" data-turma="2ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h7" data-turma="2ano"><div id="card-2ano-ter-h7-info3" class="discipline-card info info3" draggable="true">Info3: Lab BD (2h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h7" data-turma="2ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h7" data-turma="2ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h7" data-turma="2ano"></td>
+                    </tr>
+                     <!-- H8 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H8 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h8" data-turma="2ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h8" data-turma="2ano"><div id="card-2ano-ter-h8-info1a" class="discipline-card info info1" draggable="true">Info1: Adm SO/Redes (4h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h8" data-turma="2ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h8" data-turma="2ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h8" data-turma="2ano"></td>
+                    </tr>
+                    <!-- H9 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H9 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h9" data-turma="2ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h9" data-turma="2ano"><div id="card-2ano-ter-h9-info1a" class="discipline-card info info1" draggable="true">Info1: Adm SO/Redes (4h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h9" data-turma="2ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h9" data-turma="2ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h9" data-turma="2ano"></td>
+                    </tr>
+                    <!-- H10 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H10 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h10" data-turma="2ano"></td>
+                         <!-- Originalmente aqui, movida para Sex H6 -->
+                        <td class="timetable-slot afternoon-slot empty-afternoon" data-day="ter" data-time="h10" data-turma="2ano"> <div id="card-2ano-ter-h10-info2" class="discipline-card info info2 moved-placeholder" draggable="false">Info2: Dev Web OO (2h)<br>(Movido p/ Sex H6)</div> </td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h10" data-turma="2ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h10" data-turma="2ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h10" data-turma="2ano"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section> <!-- Fim 2º Ano -->
+
+         <!-- ==================== 3º ANO ==================== -->
+         <section class="turma-schedule">
+            <h2 class="turma-title">Horário - 3º Ano</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="time-header-col">Horário</th>
+                        <th>Segunda</th>
+                        <th>Terça</th>
+                        <th>Quarta</th>
+                        <th>Quinta</th>
+                        <th>Sexta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- H1 -->
+                    <tr>
+                        <td class="time-label">H1 (07:30)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h1" data-turma="3ano"><div id="card-3ano-seg-h1-bio3" class="discipline-card nature" draggable="true">Bio III (2h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h1" data-turma="3ano"><div id="card-3ano-ter-h1-qui3" class="discipline-card exact" draggable="true">Química III (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h1" data-turma="3ano"><div id="card-3ano-qua-h1-info2" class="discipline-card info info2" draggable="true">Info2: Serv Nuvem (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h1" data-turma="3ano"><div id="card-3ano-qui-h1-fil3" class="discipline-card human" draggable="true">Filo III (2h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h1" data-turma="3ano"><div id="card-3ano-sex-h1-port3b" class="discipline-card lang" draggable="true">Port III (2h)</div></td>
+                    </tr>
+                    <!-- H2 -->
+                    <tr>
+                        <td class="time-label">H2 (08:20)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h2" data-turma="3ano"><div id="card-3ano-seg-h2-bio3" class="discipline-card nature" draggable="true">Bio III (2h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h2" data-turma="3ano"><div id="card-3ano-ter-h2-qui3" class="discipline-card exact" draggable="true">Química III (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h2" data-turma="3ano"><div id="card-3ano-qua-h2-info2" class="discipline-card info info2" draggable="true">Info2: Serv Nuvem (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h2" data-turma="3ano"><div id="card-3ano-qui-h2-fil3" class="discipline-card human" draggable="true">Filo III (2h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h2" data-turma="3ano"><div id="card-3ano-sex-h2-hist3b" class="discipline-card human" draggable="true">História III (2h)</div></td>
+                    </tr>
+                    <!-- H3 -->
+                     <tr>
+                        <td class="time-label">H3 (09:25)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h3" data-turma="3ano"><div id="card-3ano-seg-h3-fis3" class="discipline-card exact" draggable="true">Física III (2h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h3" data-turma="3ano"><div id="card-3ano-ter-h3-mat3" class="discipline-card exact" draggable="true">Mat III (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h3" data-turma="3ano"><div id="card-3ano-qua-h3-soc2" class="discipline-card human" draggable="true">Socio II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h3" data-turma="3ano"><div id="card-3ano-qui-h3-info1" class="discipline-card info info1" draggable="true">Info1: Dev Resp (2h)</div></td>
+                        <td class="timetable-slot" data-day="sex" data-time="h3" data-turma="3ano"><div id="card-3ano-sex-h3-info4c" class="discipline-card info info4" draggable="true">Info4: Sist CMS (2h)</div></td>
+                    </tr>
+                    <!-- H4 -->
+                    <tr>
+                        <td class="time-label">H4 (10:15)</td>
+                         <td class="timetable-slot" data-day="seg" data-time="h4" data-turma="3ano"><div id="card-3ano-seg-h4-fis3" class="discipline-card exact" draggable="true">Física III (2h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h4" data-turma="3ano"><div id="card-3ano-ter-h4-mat3" class="discipline-card exact" draggable="true">Mat III (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h4" data-turma="3ano"><div id="card-3ano-qua-h4-soc2" class="discipline-card human" draggable="true">Socio II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h4" data-turma="3ano"><div id="card-3ano-qui-h4-info1" class="discipline-card info info1" draggable="true">Info1: Dev Resp (2h)</div></td>
+                        <td class="timetable-slot empty-slot" data-day="sex" data-time="h4" data-turma="3ano"></td> <!-- VAGO -->
+                    </tr>
+                    <!-- H5 -->
+                    <tr>
+                        <td class="time-label">H5 (11:05)</td>
+                        <td class="timetable-slot" data-day="seg" data-time="h5" data-turma="3ano"><div id="card-3ano-seg-h5-port3a" class="discipline-card lang" draggable="true">Port III (2h)</div></td>
+                        <td class="timetable-slot" data-day="ter" data-time="h5" data-turma="3ano"><div id="card-3ano-ter-h5-geo2a" class="discipline-card human" draggable="true">Geo II (2h)</div></td>
+                        <td class="timetable-slot" data-day="qua" data-time="h5" data-turma="3ano"><div id="card-3ano-qua-h5-hist3a" class="discipline-card human" draggable="true">História III (2h)</div></td>
+                        <td class="timetable-slot" data-day="qui" data-time="h5" data-turma="3ano"><div id="card-3ano-qui-h5-geo2b" class="discipline-card human" draggable="true">Geo II (2h)</div></td>
+                        <td class="timetable-slot empty-slot" data-day="sex" data-time="h5" data-turma="3ano"></td> <!-- VAGO -->
+                    </tr>
+                     <tr class="afternoon-separator"><td colspan="6">TARDE</td></tr>
+                    <!-- H6 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H6 (Tarde)</td>
+                        <td class="timetable-slot unavailable" data-day="seg" data-time="h6" data-turma="3ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h6" data-turma="3ano"><div id="card-3ano-ter-h6-info4a" class="discipline-card info info4" draggable="true">Info4: Proj Int III (2h)</div></td>
+                        <td class="timetable-slot unavailable" data-day="qua" data-time="h6" data-turma="3ano"></td>
+                        <td class="timetable-slot unavailable" data-day="qui" data-time="h6" data-turma="3ano"></td>
+                        <td class="timetable-slot unavailable" data-day="sex" data-time="h6" data-turma="3ano"></td>
+                    </tr>
+                    <!-- H7 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H7 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h7" data-turma="3ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h7" data-turma="3ano"><div id="card-3ano-ter-h7-info4a" class="discipline-card info info4" draggable="true">Info4: Proj Int III (2h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h7" data-turma="3ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h7" data-turma="3ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h7" data-turma="3ano"></td>
+                    </tr>
+                     <!-- H8 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H8 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h8" data-turma="3ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h8" data-turma="3ano"><div id="card-3ano-ter-h8-info3" class="discipline-card info info3" draggable="true">Info3: Proto UI (2h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h8" data-turma="3ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h8" data-turma="3ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h8" data-turma="3ano"></td>
+                    </tr>
+                    <!-- H9 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H9 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h9" data-turma="3ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h9" data-turma="3ano"><div id="card-3ano-ter-h9-info3" class="discipline-card info info3" draggable="true">Info3: Proto UI (2h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h9" data-turma="3ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h9" data-turma="3ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h9" data-turma="3ano"></td>
+                    </tr>
+                    <!-- H10 -->
+                    <tr class="afternoon-row">
+                        <td class="time-label afternoon-label">H10 (Tarde)</td>
+                         <td class="timetable-slot unavailable" data-day="seg" data-time="h10" data-turma="3ano"></td>
+                        <td class="timetable-slot afternoon-slot" data-day="ter" data-time="h10" data-turma="3ano"><div id="card-3ano-ter-h10-info4b" class="discipline-card info info4" draggable="true">Info4: Sist CMS (2h)</div></td>
+                         <td class="timetable-slot unavailable" data-day="qua" data-time="h10" data-turma="3ano"></td>
+                         <td class="timetable-slot unavailable" data-day="qui" data-time="h10" data-turma="3ano"></td>
+                         <td class="timetable-slot unavailable" data-day="sex" data-time="h10" data-turma="3ano"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section> <!-- Fim 3º Ano -->
+
+    </div> <!-- Fim timetable-container -->
+
+    <script src="script.js"></script>
+</body>
+</html>
