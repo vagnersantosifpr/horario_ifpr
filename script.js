@@ -1,87 +1,188 @@
+// document.addEventListener('DOMContentLoaded', () => {
+//     const cards = document.querySelectorAll('.discipline-card');
+//     const slots = document.querySelectorAll('.timetable-slot');
+
+//     // Guarda a referência do card sendo arrastado
+//     let draggedCard = null;
+
+//     // Adiciona listeners aos cards
+//     cards.forEach(card => {
+//         card.addEventListener('dragstart', (e) => {
+//             draggedCard = e.target; // Guarda o elemento sendo arrastado
+//             setTimeout(() => e.target.classList.add('dragging'), 0); // Adiciona estilo (com timeout para visualização)
+//             // console.log(`Drag Start: ${draggedCard.id}`);
+//         });
+
+//         card.addEventListener('dragend', (e) => {
+//             // Certifica-se de remover a classe dragging mesmo se o drop falhar ou for cancelado
+//              if (draggedCard) { // Verifica se draggedCard ainda existe
+//                 draggedCard.classList.remove('dragging');
+//              }
+//             draggedCard = null; // Limpa a referência
+//             // console.log("Drag End");
+
+//             // Remove classe 'drag-over' de todos os slots para limpar o estado visual
+//              slots.forEach(slot => slot.classList.remove('drag-over'));
+//         });
+//     });
+
+//     // Adiciona listeners aos slots (células da tabela)
+//     slots.forEach(slot => {
+//         slot.addEventListener('dragover', (e) => {
+//             e.preventDefault(); // Essencial para permitir o drop!
+//             e.target.classList.add('drag-over'); // Estilo visual
+//             // console.log(`Drag Over: ${e.target.dataset.day}-${e.target.dataset.time}-${e.target.dataset.turma}`);
+//         });
+
+//         slot.addEventListener('dragleave', (e) => {
+//             e.target.classList.remove('drag-over'); // Remove estilo visual
+//             // console.log(`Drag Leave: ${e.target.dataset.day}-${e.target.dataset.time}-${e.target.dataset.turma}`);
+//         });
+
+//         slot.addEventListener('drop', (e) => {
+//             e.preventDefault(); // Previne comportamento padrão (abrir como link, etc.)
+//             e.target.classList.remove('drag-over'); // Limpa o estilo
+
+//             if (draggedCard && e.target.classList.contains('timetable-slot')) {
+//                  // console.log(`Drop: ${draggedCard.id} onto ${e.target.dataset.day}-${e.target.dataset.time}-${e.target.dataset.turma}`);
+
+//                 // Verifica se o slot já tem um card (exceto o próprio card sendo arrastado)
+//                 const existingCard = e.target.querySelector('.discipline-card');
+
+//                 if (!existingCard) {
+//                     // Se o slot estiver vazio, apenas move o card
+//                     e.target.appendChild(draggedCard);
+//                     // console.log(`${draggedCard.id} moved to empty slot.`);
+//                 } else if (existingCard && existingCard !== draggedCard) {
+//                     // Se o slot NÃO estiver vazio e não for o próprio card sendo arrastado
+//                     // Implementação simples: Não permite o drop (ou poderia implementar troca)
+//                     console.log("Slot já ocupado. Troca não implementada nesta versão.");
+//                     // Para implementar a troca:
+//                     // 1. Pegar o pai original do draggedCard (draggedCard.parentNode)
+//                     // 2. Mover o existingCard para o pai original
+//                     // 3. Mover o draggedCard para o e.target (slot atual)
+//                     // Isso pode ficar complexo se o slot original também tinha um card.
+//                     // Por simplicidade, vamos apenas impedir o drop em slots ocupados.
+//                     // O 'dragend' vai limpar o estado 'dragging'.
+//                 }
+//                  // Se existingCard === draggedCard, não faz nada (soltou no mesmo lugar)
+
+//             } else if (draggedCard && e.target.classList.contains('discipline-card')) {
+//                  // Tentou soltar diretamente em cima de OUTRO card
+//                  const targetSlot = e.target.closest('.timetable-slot');
+//                  if (targetSlot && targetSlot !== draggedCard.parentNode) {
+//                      console.log("Slot já ocupado (drop sobre outro card). Troca não implementada.");
+//                      // Poderia implementar a troca aqui também, movendo e.target para draggedCard.parentNode
+//                  }
+//             }
+
+//             // Garante que a classe dragging seja removida após o drop,
+//             // mesmo que a lógica de drop não mova o elemento.
+//              if (draggedCard) {
+//                 draggedCard.classList.remove('dragging');
+//              }
+//              // dragend fará a limpeza final de draggedCard = null;
+//         });
+//     });
+// });
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.discipline-card');
+    const cards = document.querySelectorAll('.discipline-card:not(.moved-placeholder)'); // Seleciona apenas cards reais, não placeholders
     const slots = document.querySelectorAll('.timetable-slot');
 
-    // Guarda a referência do card sendo arrastado
-    let draggedCard = null;
+    let draggedCard = null; // O card que está sendo arrastado
+    let originalSlot = null; // O slot de onde o card saiu
 
-    // Adiciona listeners aos cards
+    // --- Funções Auxiliares ---
+    function clearDropStyles() {
+        slots.forEach(slot => slot.classList.remove('drag-over'));
+    }
+
+    // --- Listeners nos Cards ---
     cards.forEach(card => {
         card.addEventListener('dragstart', (e) => {
-            draggedCard = e.target; // Guarda o elemento sendo arrastado
-            setTimeout(() => e.target.classList.add('dragging'), 0); // Adiciona estilo (com timeout para visualização)
-            // console.log(`Drag Start: ${draggedCard.id}`);
+            // Verifica se o elemento clicado é realmente um card arrastável
+            if (!e.target.classList.contains('discipline-card') || e.target.classList.contains('moved-placeholder')) {
+                 e.preventDefault(); // Impede o drag de placeholders ou elementos inesperados
+                 return;
+            }
+
+            draggedCard = e.target;
+            originalSlot = draggedCard.parentNode; // Guarda o slot pai original
+            setTimeout(() => draggedCard.classList.add('dragging'), 0);
+            // console.log(`Drag Start: ${draggedCard.id} from slot ${originalSlot.dataset.day}-${originalSlot.dataset.time}-${originalSlot.dataset.turma}`);
         });
 
-        card.addEventListener('dragend', (e) => {
-            // Certifica-se de remover a classe dragging mesmo se o drop falhar ou for cancelado
-             if (draggedCard) { // Verifica se draggedCard ainda existe
+        card.addEventListener('dragend', () => {
+            // Limpa o estilo 'dragging' e as referências, independentemente do resultado do drop
+            if (draggedCard) {
                 draggedCard.classList.remove('dragging');
-             }
-            draggedCard = null; // Limpa a referência
+            }
+            clearDropStyles(); // Garante que nenhum slot fique com o estilo 'drag-over'
+            draggedCard = null;
+            originalSlot = null;
             // console.log("Drag End");
-
-            // Remove classe 'drag-over' de todos os slots para limpar o estado visual
-             slots.forEach(slot => slot.classList.remove('drag-over'));
         });
     });
 
-    // Adiciona listeners aos slots (células da tabela)
+    // --- Listeners nos Slots ---
     slots.forEach(slot => {
         slot.addEventListener('dragover', (e) => {
-            e.preventDefault(); // Essencial para permitir o drop!
-            e.target.classList.add('drag-over'); // Estilo visual
-            // console.log(`Drag Over: ${e.target.dataset.day}-${e.target.dataset.time}-${e.target.dataset.turma}`);
+            e.preventDefault(); // Necessário para permitir o drop
+            if (slot !== originalSlot && !slot.classList.contains('unavailable')) { // Não destaca o slot original ou indisponíveis
+                 slot.classList.add('drag-over');
+            }
+            // console.log(`Drag Over: ${slot.dataset.day}-${slot.dataset.time}-${slot.dataset.turma}`);
         });
 
         slot.addEventListener('dragleave', (e) => {
-            e.target.classList.remove('drag-over'); // Remove estilo visual
+            // Apenas remove o estilo se o mouse realmente saiu do slot (não se moveu para um filho como o card)
+            if (e.target === slot) {
+                 slot.classList.remove('drag-over');
+            }
             // console.log(`Drag Leave: ${e.target.dataset.day}-${e.target.dataset.time}-${e.target.dataset.turma}`);
         });
 
         slot.addEventListener('drop', (e) => {
-            e.preventDefault(); // Previne comportamento padrão (abrir como link, etc.)
-            e.target.classList.remove('drag-over'); // Limpa o estilo
+            e.preventDefault(); // Previne comportamento padrão
+            clearDropStyles(); // Limpa o estilo de todos os slots
 
-            if (draggedCard && e.target.classList.contains('timetable-slot')) {
-                 // console.log(`Drop: ${draggedCard.id} onto ${e.target.dataset.day}-${e.target.dataset.time}-${e.target.dataset.turma}`);
+            // Identifica o slot de destino (pode ser o próprio slot ou um card dentro dele)
+            const targetSlot = e.target.closest('.timetable-slot');
 
-                // Verifica se o slot já tem um card (exceto o próprio card sendo arrastado)
-                const existingCard = e.target.querySelector('.discipline-card');
-
-                if (!existingCard) {
-                    // Se o slot estiver vazio, apenas move o card
-                    e.target.appendChild(draggedCard);
-                    // console.log(`${draggedCard.id} moved to empty slot.`);
-                } else if (existingCard && existingCard !== draggedCard) {
-                    // Se o slot NÃO estiver vazio e não for o próprio card sendo arrastado
-                    // Implementação simples: Não permite o drop (ou poderia implementar troca)
-                    console.log("Slot já ocupado. Troca não implementada nesta versão.");
-                    // Para implementar a troca:
-                    // 1. Pegar o pai original do draggedCard (draggedCard.parentNode)
-                    // 2. Mover o existingCard para o pai original
-                    // 3. Mover o draggedCard para o e.target (slot atual)
-                    // Isso pode ficar complexo se o slot original também tinha um card.
-                    // Por simplicidade, vamos apenas impedir o drop em slots ocupados.
-                    // O 'dragend' vai limpar o estado 'dragging'.
-                }
-                 // Se existingCard === draggedCard, não faz nada (soltou no mesmo lugar)
-
-            } else if (draggedCard && e.target.classList.contains('discipline-card')) {
-                 // Tentou soltar diretamente em cima de OUTRO card
-                 const targetSlot = e.target.closest('.timetable-slot');
-                 if (targetSlot && targetSlot !== draggedCard.parentNode) {
-                     console.log("Slot já ocupado (drop sobre outro card). Troca não implementada.");
-                     // Poderia implementar a troca aqui também, movendo e.target para draggedCard.parentNode
-                 }
+            // Verifica se o drop é válido (em um slot, não indisponível, e se temos um card sendo arrastado)
+            if (!targetSlot || targetSlot.classList.contains('unavailable') || !draggedCard || !originalSlot) {
+                console.log("Drop inválido ou estado inconsistente.");
+                return;
             }
 
-            // Garante que a classe dragging seja removida após o drop,
-            // mesmo que a lógica de drop não mova o elemento.
-             if (draggedCard) {
-                draggedCard.classList.remove('dragging');
-             }
-             // dragend fará a limpeza final de draggedCard = null;
+            // Pega o card que JÁ ESTÁ no slot de destino (se houver)
+            const targetCard = targetSlot.querySelector('.discipline-card:not(.moved-placeholder)');
+
+            // console.log(`Drop: ${draggedCard.id} onto slot ${targetSlot.dataset.day}-${targetSlot.dataset.time}-${targetSlot.dataset.turma}`);
+
+            // Caso 1: Soltando em um slot VAZIO (e diferente do original)
+            if (!targetCard && targetSlot !== originalSlot) {
+                 console.log(`Movendo ${draggedCard.id} para slot vazio.`);
+                 targetSlot.appendChild(draggedCard);
+            }
+            // Caso 2: Soltando sobre OUTRO card (realizando a TROCA)
+            else if (targetCard && targetCard !== draggedCard && targetSlot !== originalSlot) {
+                console.log(`Trocando ${draggedCard.id} com ${targetCard.id}.`);
+                // Mover targetCard para o slot original de draggedCard
+                originalSlot.appendChild(targetCard);
+                // Mover draggedCard para o slot de destino (onde targetCard estava)
+                targetSlot.appendChild(draggedCard);
+            }
+            // Caso 3: Soltando no mesmo slot original ou em um card inválido (nenhuma ação)
+            else {
+                 console.log("Nenhuma ação necessária (soltou no mesmo lugar ou alvo inválido).");
+            }
+
+             // O dragend cuidará da limpeza final de draggedCard e originalSlot
         });
     });
 });
