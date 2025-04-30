@@ -223,3 +223,38 @@ td.time-label.afternoon-label {
 .timetable-slot.empty-slot {
     background-color: #fafafa; /* Quase branco */
 }
+
+
+
+/* === Estilos Botão Salvar === */
+.save-button-container {
+    text-align: center; /* Centraliza o botão */
+    margin-top: 25px;   /* Espaço acima do botão */
+    margin-bottom: 20px; /* Espaço abaixo do botão */
+}
+
+#saveButton {
+    padding: 12px 25px; /* Espaçamento interno */
+    background-color: #00796b; /* Verde IFPR */
+    color: white;           /* Texto branco */
+    border: none;           /* Sem borda padrão */
+    border-radius: 5px;     /* Cantos arredondados */
+    cursor: pointer;        /* Cursor de mãozinha */
+    font-size: 1.1em;       /* Tamanho da fonte */
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra leve */
+}
+
+#saveButton:hover {
+    background-color: #004d40; /* Verde mais escuro no hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra mais pronunciada */
+}
+
+#saveButton:active {
+     background-color: #003d33; /* Verde ainda mais escuro ao clicar */
+     box-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Sombra menor ao clicar */
+}
+/* === Fim Estilos Botão === */
+
+
