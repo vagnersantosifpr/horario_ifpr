@@ -198,3 +198,28 @@ td.time-label.afternoon-label {
 .timetable-slot.empty-slot {
     background-color: #fafafa;
 }
+
+/* Adicione esta regra ao seu style.css */
+
+.timetable-slot.non-scheduled-afternoon {
+    background-color: #f5f5f5; /* Um cinza bem claro, diferente do branco/verde claro */
+    /* Ou use um padrão sutil se preferir: */
+    /* background-image: repeating-linear-gradient(
+        45deg,
+        #fafafa,
+        #fafafa 5px,
+        #f5f5f5 5px,
+        #f5f5f5 10px
+    ); */
+}
+
+/* Ajuste opcional para slots vazios da tarde "normal" */
+.timetable-slot.empty-afternoon {
+     background-color: #e8f5e9; /* Mesmo fundo verde claro dos slots da tarde normais */
+     /* Ou pode deixá-lo branco se preferir */
+}
+
+/* Ajuste opcional para slots vazios da manhã */
+.timetable-slot.empty-slot {
+    background-color: #fafafa; /* Quase branco */
+}
